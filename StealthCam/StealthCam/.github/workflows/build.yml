@@ -1,0 +1,20 @@
+name: Build iOS App
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build IPA
+        run: |
+          xcodebuild -project StealthCam.xcodeproj -scheme StealthCam -sdk iphoneos -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO archive -archivePath build/StealthCam.xcarchive
+          mkdir -p build/Payload
+          cp -r build/StealthCam.xcarchive/Products/Applications/StealthCam.app build/Payload/
+          cd build
+          zip -r StealthCam.ipa Payload
+      - name: Upload IPA
+        uses: actions/upload-artifact@v3
+        with:
+          name: StealthCam
+          path: build/StealthCam.ipa
+          
