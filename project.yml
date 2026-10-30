@@ -1,0 +1,11 @@
+name: StealthCam
+options:
+  bundleIdPrefix: com.stealth
+targets:
+  StealthCam:
+    type: application
+    platform: iOS
+    deploymentTarget: "14.0"
+    sources: [StealthCam]
+    info:
+      path: StealthCam/Info.plist
