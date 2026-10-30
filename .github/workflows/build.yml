@@ -5,6 +5,10 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Generate Xcode Project
+        run: |
+          brew install xcodegen
+          xcodegen generate
       - name: Build IPA
         run: |
           xcodebuild -project StealthCam.xcodeproj -scheme StealthCam -sdk iphoneos -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO archive -archivePath build/StealthCam.xcarchive
