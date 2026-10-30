@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>NSCameraUsageDescription</key>
+    <string>Cần quyền camera để quay video</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Cần quyền mic để thu âm thanh</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Cần quyền lưu video vào thư viện</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>stealthcam</string>
+            </array>
+        </dict>
+    </array>
+</dict>
+</plist>
